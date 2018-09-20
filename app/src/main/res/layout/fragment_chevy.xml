@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frag_Chevy">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:id="@+id/relativeId"
+        android:layout_width="match_parent"
+        android:layout_height="495dp">
+
+        <ImageView
+            android:id="@+id/imageViewId"
+            android:layout_width="wrap_content"
+            android:layout_height="296dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/chevy" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="161dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextoDetalle"
+                android:text="Modelo:" />
+
+            <TextView
+                android:id="@+id/modeloId"
+                style="@style/TextoVista"
+                android:text="Chevy" />
+
+            <TextView
+                style="@style/TextoDetalle"
+                android:text="Marca:" />
+
+            <TextView
+                android:id="@+id/marcaId"
+                style="@style/TextoVista"
+                android:text="Chevrolet" />
+
+            <TextView
+                style="@style/TextoDetalle"
+                android:text="Anio:" />
+
+            <TextView
+                android:id="@+id/anioId"
+                style="@style/TextoVista"
+                android:text="1960" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
