@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!-- HEAT METAL -->
+    <color name="heat_metal4">#31303e</color>
+    <color name="heat_metal3">#fa566f</color>
+    <color name="heat_metal2">#ba6d7e</color>
+    <color name="monster_mash">#59616c</color>
+    <color name="heat_metal1">#474b5b</color>
 </resources>

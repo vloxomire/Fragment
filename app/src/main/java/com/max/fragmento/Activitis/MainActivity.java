@@ -1,16 +1,16 @@
-package com.max.fragmento;
+package com.max.fragmento.Activitis;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-public class MainFragment extends AppCompatActivity {
+import com.max.fragmento.R;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_fragment);
+        setContentView(R.layout.main_activity);
 
     }
 }
