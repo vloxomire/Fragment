@@ -3,6 +3,7 @@ package com.max.fragmento.Activitis;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -15,7 +16,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        //Bloque tabLayout
+        //<<<Bloque Toolbar>>>
+        Toolbar myToolbar=findViewById(R.id.my_toolbarId);
+        setSupportActionBar(myToolbar);//Este método establece la barra de herramientas como la barra de app de la actividad
+        getSupportActionBar().setDisplayShowTitleEnabled(true);//Este método muestra una referencia a un objeto appcompat ActionBar
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("Autos_Arg");
+        getSupportActionBar().setLogo(R.drawable.traffic);
+
+
+        //<<<Bloque tabLayout>>>
         TabLayout tabLayout=findViewById(R.id.tabLayoutId);
         //agrego los tab
         tabLayout.addTab(tabLayout.newTab().setText("Chevy"));   //añadimos los tabs
