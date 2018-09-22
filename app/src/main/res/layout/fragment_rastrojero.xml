@@ -6,11 +6,49 @@
     tools:context=".Fragments.RastrojeroFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/imageViewId"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rastrojero"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_centerInParent="true"/>
+        android:layout_height="296dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/rastrojero" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextoDetalle"
+            android:text="Modelo:" />
+
+        <TextView
+            android:id="@+id/modeloId"
+            style="@style/TextoVista"
+            android:text="Rastrojero" />
+
+        <TextView
+            style="@style/TextoDetalle"
+            android:text="Marca:" />
+
+        <TextView
+            android:id="@+id/marcaId"
+            style="@style/TextoVista"
+            android:text="IAME-Industrias Aeronáuticas y Mecánicas del Estado" />
+
+        <TextView
+            style="@style/TextoDetalle"
+            android:text="Anio:" />
+
+        <TextView
+            android:id="@+id/anioId"
+            style="@style/TextoVista"
+            android:text="1952" />
+
+    </LinearLayout>
 
 </RelativeLayout>
