@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layoutId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,6 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tabLayoutId"/>
-
-
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>
+    <!-- The navigation drawer, la parte que emerge de la izquierda -->
+   <android.support.design.widget.NavigationView
+       android:id="@+id/navigationViewId"
+       android:layout_height="match_parent"
+       android:layout_width="wrap_content"
+       android:layout_gravity="start">
+
+   </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
