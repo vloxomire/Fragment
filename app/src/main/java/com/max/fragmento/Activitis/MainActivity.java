@@ -1,6 +1,9 @@
 package com.max.fragmento.Activitis;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -12,16 +15,59 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.max.fragmento.Adapters.PagerAdapter;
+import com.max.fragmento.Fragments.AlertasFragment;
+import com.max.fragmento.Fragments.EmailFragment;
+import com.max.fragmento.Fragments.InfoFragment;
 import com.max.fragmento.R;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        //<<Bloque DrawerLayout>>
+        drawerLayout=findViewById(R.id.drawer_layoutId);
+        //<<Bloque NavigationView>>
+        navigationView=findViewById(R.id.navigationViewId);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                boolean fragmentTransaction = false;
+                Fragment fragment=null;
+                switch (item.getItemId()){
+                    case R.id.menu_email:
+                        Toast.makeText(MainActivity.this,"Email",Toast.LENGTH_SHORT).show();
+                        fragment = new EmailFragment(); //Se crea un fragment del tipo mail
+                        fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
+                        break;
+                    case R.id.menu_alerta:
+                        Toast.makeText(MainActivity.this,"Alerta",Toast.LENGTH_SHORT).show();
+                        fragment = new AlertasFragment();   //Se crea un fragment del tipo alerta
+                        fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
+                        break;
+                    case R.id.menu_informacion:
+                        Toast.makeText(MainActivity.this,"Informacion",Toast.LENGTH_SHORT).show();
+                        fragment = new InfoFragment();  //Se crea un fragment del tipo info
+                        fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
+                        break;
+                }
+                if (fragmentTransaction=true){
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.content_frame,fragment)
+                            .commit();  //hace la transaccion
+                    item.setChecked(true);  //te marcas las lineas activas en el menuNavigationView
+                    getSupportActionBar().setTitle(item.getTitle());
+                    drawerLayout.closeDrawers();
+                }
+                return true;
+            }
+        });
 
         //<<<Bloque Toolbar>>>
         Toolbar myToolbar=findViewById(R.id.my_toolbarId);
@@ -29,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);//Este método muestra una referencia a un objeto appcompat ActionBar
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(false);
         getSupportActionBar().setTitle("Autos");
         getSupportActionBar().setLogo(R.drawable.traffic);
 
