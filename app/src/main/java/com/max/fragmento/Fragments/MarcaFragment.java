@@ -12,10 +12,10 @@ import com.max.fragmento.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FalconFragment extends Fragment {
+public class MarcaFragment extends Fragment {
 
 
-    public FalconFragment() {
+    public MarcaFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class FalconFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_falcon, container, false);
+        View view=inflater.inflate(R.layout.fragment_marca, container, false);
         return view;
     }
 

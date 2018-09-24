@@ -1,6 +1,7 @@
 package com.max.fragmento.Activitis;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.max.fragmento.Adapters.PagerAdapter;
@@ -23,12 +25,20 @@ import com.max.fragmento.R;
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private FloatingActionButton floatingActionButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        floatingActionButton=findViewById(R.id.boton_flotanteId);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"boton flotante",Toast.LENGTH_SHORT);
+            }
+        });
         //<<Bloque DrawerLayout>>
         drawerLayout=findViewById(R.id.drawer_layoutId);
         //<<Bloque NavigationView>>
@@ -88,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
         //<<<Bloque tabLayout>>>
         TabLayout tabLayout=findViewById(R.id.tabLayoutId);
         //agrego los tab
-        tabLayout.addTab(tabLayout.newTab().setText("Chevy"));   //añadimos los tabs
-        tabLayout.addTab(tabLayout.newTab().setText("Falcon"));
-        tabLayout.addTab(tabLayout.newTab().setText("Rastrojero"));
+        tabLayout.addTab(tabLayout.newTab().setText("Auto"));   //añadimos los tabs
+        tabLayout.addTab(tabLayout.newTab().setText("Marca"));
+        tabLayout.addTab(tabLayout.newTab().setText("Modelo"));
         //seteo gravedad de los tabs q afectan al texto
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
 

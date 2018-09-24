@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.max.fragmento.Fragments.ChevyFragment;
-import com.max.fragmento.Fragments.FalconFragment;
-import com.max.fragmento.Fragments.RastrojeroFragment;
+import com.max.fragmento.Fragments.AutoFragment;
+import com.max.fragmento.Fragments.ModeloFragment;
+import com.max.fragmento.Fragments.MarcaFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     private int numberOfTabs;
@@ -20,11 +20,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         // una posicion y de esa posicion tenemos una instancia de un fragmento u otro fragment
         switch (position){
             case 0:
-                return new ChevyFragment();
+                return new AutoFragment();
             case 1:
-                return new FalconFragment();
+                return new ModeloFragment();
             case 2:
-                return new RastrojeroFragment();
+                return new MarcaFragment();
             default:
                 return null;
         }

@@ -12,10 +12,10 @@ import com.max.fragmento.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RastrojeroFragment extends Fragment {
+public class ModeloFragment extends Fragment {
 
 
-    public RastrojeroFragment() {
+    public ModeloFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class RastrojeroFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_rastrojero, container, false);
+        View view=inflater.inflate(R.layout.fragment_modelo, container, false);
         return view;
     }
 
