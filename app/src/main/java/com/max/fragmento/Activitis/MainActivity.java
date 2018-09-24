@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout=findViewById(R.id.drawer_layoutId);
         //<<Bloque NavigationView>>
         navigationView=findViewById(R.id.navigationViewId);
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -46,21 +45,25 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
                         break;
                     case R.id.menu_alerta:
-                        Toast.makeText(MainActivity.this,"Alerta",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Alerta",Toast.LENGTH_SHORT).show();
                         fragment = new AlertasFragment();   //Se crea un fragment del tipo alerta
                         fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
                         break;
                     case R.id.menu_informacion:
-                        Toast.makeText(MainActivity.this,"Informacion",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Informacion",Toast.LENGTH_SHORT).show();
                         fragment = new InfoFragment();  //Se crea un fragment del tipo info
                         fragmentTransaction=true;   //Se hace una transaccion se abre un fragment
                         break;
+                    case R.id.menu_opcion_1:
+                        Toast.makeText(getApplicationContext(),"Opcion 1",Toast.LENGTH_SHORT).show();
+                        break;
+                    case  R.id.menu_opcion_2:
+                        Toast.makeText(getApplicationContext(),"Opcion 2",Toast.LENGTH_SHORT).show();
+                        break;
+
                 }
-                if (fragmentTransaction=true){
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.content_frame,fragment)
-                            .commit();  //hace la transaccion
+                if (fragmentTransaction){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,fragment).commit();  //hace la transaccion
                     item.setChecked(true);  //te marcas las lineas activas en el menuNavigationView
                     getSupportActionBar().setTitle(item.getTitle());
                     drawerLayout.closeDrawers();
