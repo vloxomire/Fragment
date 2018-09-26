@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitis.formulario">
+    <TextView
+        android:id="@+id/TxtVId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint="ID"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MARCA"
+        android:id="@+id/marcaId"
+        android:layout_below="@+id/TxtVId"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MODELO"
+        android:id="@+id/modeloId"
+        android:layout_below="@+id/marcaId"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NOMBRE"
+        android:id="@+id/nombreId"
+        android:layout_below="@+id/modeloId"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="AÑO"
+        android:inputType="number"
+        android:id="@+id/añoId"
+        android:layout_below="@+id/nombreId"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/añoId"
+        android:text="Agregar datos"
+        android:id="@+id/boton_agregarId"/>
+
+
+
+
+</RelativeLayout>
